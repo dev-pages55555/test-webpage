@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>温熱調和ギア | 冷えは万病のもと。整体師監修の新しい温活</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 明朝体をメインに、細いウェイト（300, 400）を使用して透明感を演出 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Noto Serif JP"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#FCFBFA',      /* 極めて白に近いペールグレージュ */
+                            text: '#44403C',    /* 柔らかいチャコールグレー（高級感） */
+                            accent: '#A89278',  /* 落ち着いたシャンパンゴールド・モカ */
+                            light: '#F5F5F3',   /* 淡いグレーベージュ */
+                            line: '#E7E5E4',    /* 繊細な罫線用 */
+                        }
+                    },
+                    letterSpacing: {
+                        widest: '.15em',
+                        widest2: '.2em',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { color: #44403C; background-color: #FCFBFA; font-family: 'Noto Serif JP', serif; }
+        
+        /* スクロールアニメーション用（ゆっくりと優雅にフェードイン） */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 繊細なチェックボックス */
+        .check-wrap input:checked + div {
+            background-color: #A89278;
+            border-color: #A89278;
+        }
+        .check-wrap input:checked + div::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 1px 1px 0;
+            transform: rotate(45deg);
+        }
+
+        /* FAQアコーディオン */
+        details > summary { list-style: none; cursor: pointer; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="antialiased font-light text-brand-text leading-loose">
+
+    <!-- ヘッダー（透過デザイン・スクロール追従） -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-xl font-normal tracking-widest text-brand-text">温熱調和ギア</div>
+            <div class="hidden md:flex space-x-10 text-xs font-normal tracking-widest text-gray-700">
+                <a href="#concept" class="hover:text-brand-accent transition-colors">コンセプト</a>
+                <a href="#features" class="hover:text-brand-accent transition-colors">特徴</a>
+                <a href="#reviews" class="hover:text-brand-accent transition-colors">お客様の声</a>
+                <a href="#faq" class="hover:text-brand-accent transition-colors">よくある質問</a>
+            </div>
+            <a href="#buy" class="text-xs font-normal tracking-widest border border-brand-text py-2 px-6 hover:bg-brand-text hover:text-white transition-colors duration-300">
+                ご購入はこちら
+            </a>
+        </div>
+    </nav>
+
+    <!-- ファーストビュー（FV） -->
+    <header class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('Gemini_Generated_Image_otk7emotk7emotk7.jpg');"></div>
+        <!-- 透明感を出すための非常に薄いグラデーション -->
+        <div class="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent"></div>
+        
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-start justify-center h-full pt-20">
+            <div class="w-full md:w-1/2 fade-in-up">
+                <p class="text-xs tracking-widest2 text-brand-accent mb-6 uppercase">Concept</p>
+                <h1 class="text-3xl md:text-5xl font-normal leading-[1.6] tracking-widest mb-8">
+                    冷えは万病のもと。<br>
+                    温熱調和で、<br>
+                    根本から体を整える。
+                </h1>
+                <p class="text-sm md:text-base leading-[2.2] text-gray-600 mb-12 font-light">
+                    生理痛、慢性的な冷え、妊娠中の不安に。<br>
+                    単なる衣料品ではない、新しいアプローチ。
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- コンセプトメッセージ（余白と細字で透明感を） -->
+    <section id="concept" class="py-32 px-6 text-center bg-brand-bg">
+        <div class="max-w-3xl mx-auto fade-in-up">
+            <h2 class="text-2xl md:text-3xl font-normal mb-12 tracking-widest">心と体を、芯から解きほぐす。</h2>
+            <p class="text-sm md:text-base leading-[2.5] text-gray-600 text-left md:text-center font-light">
+                私たちは日々、見えないストレスや寒暖差にさらされています。<br class="hidden md:block">
+                「いつもどこかが冷えている」「なんとなく不調が続く」<br class="hidden md:block">
+                そんな声に耳を傾け、東洋医学の叡智と最新技術を掛け合わせました。<br><br>
+                目指したのは、ただ温めるだけでなく、<br class="hidden md:block">
+                あなた自身の体温と「調和」するギア。<br>
+                毎日の暮らしにそっと寄り添う、心地よいお守りのような存在です。
+            </p>
+        </div>
+    </section>
+
+    <!-- 動画セクション -->
+    <section class="py-16 px-6 bg-brand-bg relative">
+        <div class="max-w-4xl mx-auto fade-in-up">
+            <div class="text-center mb-10">
+                <h2 class="text-xl md:text-2xl font-normal tracking-widest mb-4">日常に溶け込む、極上の温もり</h2>
+            </div>
+            <!-- 影をなくし、繊細なボーダーのみで洗練させる -->
+            <div class="overflow-hidden border border-brand-line aspect-video relative">
+                <video src="promo.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+            </div>
+        </div>
+    </section>
+
+    <!-- お悩みチェックリスト（繊細で上品に） -->
+    <section class="py-32 px-6 bg-white">
+        <div class="max-w-2xl mx-auto fade-in-up">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-normal tracking-widest">こんなお悩み、ありませんか？</h2>
+            </div>
+            
+            <div class="border border-brand-line p-8 md:p-14 bg-brand-bg">
+                <ul class="space-y-6">
+                    <label class="check-wrap flex items-center cursor-pointer group">
+                        <input type="checkbox" class="checklist-item hidden" onclick="updateChecklist()">
+                        <div class="w-4 h-4 border border-gray-400 mr-5 relative flex-shrink-0 transition-colors"></div>
+                        <span class="text-gray-700 text-sm md:text-base tracking-wide font-light">仕事中に肌着のベタベタが気になる</span>
+                    </label>
+                    <label class="check-wrap flex items-center cursor-pointer group">
+                        <input type="checkbox" class="checklist-item hidden" onclick="updateChecklist()">
+                        <div class="w-4 h-4 border border-gray-400 mr-5 relative flex-shrink-0 transition-colors"></div>
+                        <span class="text-gray-700 text-sm md:text-base tracking-wide font-light">お腹に刺すような痛みが頻繁に出る</span>
+                    </label>
+                    <label class="check-wrap flex items-center cursor-pointer group">
+                        <input type="checkbox" class="checklist-item hidden" onclick="updateChecklist()">
+                        <div class="w-4 h-4 border border-gray-400 mr-5 relative flex-shrink-0 transition-colors"></div>
+                        <span class="text-gray-700 text-sm md:text-base tracking-wide font-light">最近汗臭さが気になっている</span>
+                    </label>
+                    <label class="check-wrap flex items-center cursor-pointer group">
+                        <input type="checkbox" class="checklist-item hidden" onclick="updateChecklist()">
+                        <div class="w-4 h-4 border border-gray-400 mr-5 relative flex-shrink-0 transition-colors"></div>
+                        <span class="text-gray-700 text-sm md:text-base tracking-wide font-light">生理痛がひどく薬が手放せない</span>
+                    </label>
+                    <label class="check-wrap flex items-center cursor-pointer group">
+                        <input type="checkbox" class="checklist-item hidden" onclick="updateChecklist()">
+                        <div class="w-4 h-4 border border-gray-400 mr-5 relative flex-shrink-0 transition-colors"></div>
+                        <span class="text-gray-700 text-sm md:text-base tracking-wide font-light">お腹まわりのアセモを何とかしたい</span>
+                    </label>
+                    <label class="check-wrap flex items-center cursor-pointer group">
+                        <input type="checkbox" class="checklist-item hidden" onclick="updateChecklist()">
+                        <div class="w-4 h-4 border border-gray-400 mr-5 relative flex-shrink-0 transition-colors"></div>
+                        <span class="text-gray-700 text-sm md:text-base tracking-wide font-light">現在妊活中である</span>
+                    </label>
+                    <label class="check-wrap flex items-center cursor-pointer group">
+                        <input type="checkbox" class="checklist-item hidden" onclick="updateChecklist()">
+                        <div class="w-4 h-4 border border-gray-400 mr-5 relative flex-shrink-0 transition-colors"></div>
+                        <span class="text-gray-700 text-sm md:text-base tracking-wide font-light">腹巻きをしたいが、汗で蒸れるのであきらめている</span>
+                    </label>
+                </ul>
+                
+                <div id="checklist-result" class="mt-12 pt-8 border-t border-brand-line text-center text-sm md:text-base font-normal tracking-widest text-brand-accent opacity-0 transition-all duration-700">
+                    一つでも当てはまるあなたへ。<br>温熱調和ギアが力になります。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ロジック解説 -->
+    <section class="py-32 px-6 bg-brand-bg text-center">
+        <div class="max-w-3xl mx-auto fade-in-up">
+            <p class="text-xs tracking-widest2 text-brand-accent mb-6 uppercase">Approach</p>
+            <h2 class="text-2xl md:text-3xl font-normal mb-10 tracking-widest">「汗冷え」が不調の連鎖を生む</h2>
+            <p class="text-sm md:text-base leading-[2.5] text-gray-700 text-left md:text-center font-light">
+                良かれと思って重ね着をすると、知らず知らずのうちに汗をかきます。<br>
+                その汗が冷えることで、体温を奪い、さらなる深い冷えを引き起こす。<br>
+                これが「汗冷え → 冷え → 不調」という悪循環です。<br><br>
+                私たちはこの因果ロジックに着目し、ただ温めるだけではない<br class="hidden md:block">
+                「調和」をもたらすためのギアを開発しました。
+            </p>
+        </div>
+    </section>
+
+    <!-- 4つの強み（余白と細いラインで構成） -->
+    <section id="features" class="py-32 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-24 fade-in-up">
+                <p class="text-xs tracking-widest2 text-brand-accent mb-6 uppercase">Features</p>
+                <h2 class="text-2xl md:text-3xl font-normal tracking-widest">妥協のない品質と機能性</h2>
+            </div>
+
+            <div class="space-y-32">
+                <!-- 01 -->
+                <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20 fade-in-up">
+                    <div class="w-full md:w-1/2">
+                        <img src="img1.jpg" alt="COOLMAX素材" class="w-full aspect-square md:aspect-[4/5] object-cover filter brightness-[0.95] contrast-100">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <span class="text-sm font-normal text-brand-accent tracking-widest block mb-4">01</span>
+                        <h3 class="text-xl md:text-2xl font-normal mb-8 leading-relaxed tracking-widest">COOLMAX®による<br>湿度コントロール</h3>
+                        <p class="text-sm md:text-base text-gray-600 leading-[2.5] font-light">優れた吸水速乾性を持つ高機能素材「COOLMAX」を採用。汗を瞬時に吸い上げて逃がし、常に肌をサラサラに保つことで、不調の原因となる「汗冷え」を根本からブロックします。</p>
+                    </div>
+                </div>
+
+                <!-- 02 -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20 fade-in-up">
+                    <div class="w-full md:w-1/2">
+                        <img src="img2.jpg" alt="スマート着脱" class="w-full aspect-square md:aspect-[4/5] object-cover filter brightness-[0.95] contrast-100">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <span class="text-sm font-normal text-brand-accent tracking-widest block mb-4">02</span>
+                        <h3 class="text-xl md:text-2xl font-normal mb-8 leading-relaxed tracking-widest">スナップボタンで<br>スマートに着脱</h3>
+                        <p class="text-sm md:text-base text-gray-600 leading-[2.5] font-light">「暑い」と感じたその瞬間に、服を脱ぐことなく一瞬で外せるスナップボタン仕様。働く女性の忙しい日常や、外出先のトイレでもメイクや髪型を崩さずストレスなく温度調節が可能です。</p>
+                    </div>
+                </div>
+
+                <!-- 03 -->
+                <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20 fade-in-up">
+                    <div class="w-full md:w-1/2">
+                        <img src="img3.jpg" alt="365日の温活" class="w-full aspect-square md:aspect-[4/5] object-cover filter brightness-[0.95] contrast-100">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <span class="text-sm font-normal text-brand-accent tracking-widest block mb-4">03</span>
+                        <h3 class="text-xl md:text-2xl font-normal mb-8 leading-relaxed tracking-widest">季節を問わない、<br>365日の温活</h3>
+                        <p class="text-sm md:text-base text-gray-600 leading-[2.5] font-light">冬の厳しい寒さはもちろん、夏の容赦ない冷房対策や、就寝時の寝冷え防止にも。極薄設計で服に響かず、アウターを選ばないため、一年を通してあなたの体を優しく守り抜きます。</p>
+                    </div>
+                </div>
+
+                <!-- 04 -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20 fade-in-up">
+                    <div class="w-full md:w-1/2">
+                        <img src="img4.jpg" alt="60日間の品質保証" class="w-full aspect-square md:aspect-[4/5] object-cover filter brightness-[0.95] contrast-100">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <span class="text-sm font-normal text-brand-accent tracking-widest block mb-4">04</span>
+                        <h3 class="text-xl md:text-2xl font-normal mb-8 leading-relaxed tracking-widest">日本製・<br>60日間の品質保証</h3>
+                        <p class="text-sm md:text-base text-gray-600 leading-[2.5] font-light">日本の熟練した職人が、一つひとつ丁寧に縫製。肌に直接触れるものだからこそ品質を追求し、万が一ご満足いただけない場合のための60日間返品保証をお付けしています。安心してお試しください。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- お客様の声（余白と罫線で洗練） -->
+    <section id="reviews" class="py-32 px-6 bg-brand-bg">
+        <div class="max-w-5xl mx-auto fade-in-up">
+            <div class="text-center mb-20">
+                <p class="text-xs tracking-widest2 text-brand-accent mb-6 uppercase">Reviews</p>
+                <h2 class="text-2xl md:text-3xl font-normal tracking-widest">ご愛用者様の声</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="border-t border-brand-line pt-8">
+                    <h4 class="font-normal mb-4 text-base tracking-widest">仕事中の冷えが劇的に改善</h4>
+                    <p class="text-gray-600 text-sm leading-[2.2] mb-6 font-light">オフィスが冷え込むため購入。薄手なのに本当に暖かく、何より汗をかいてもサラサラなのが驚きです。ボタン式でトイレでサッと外せるのが素晴らしいです。</p>
+                    <p class="text-xs text-gray-400 tracking-widest">30代 / 会社員</p>
+                </div>
+                <div class="border-t border-brand-line pt-8">
+                    <h4 class="font-normal mb-4 text-base tracking-widest">妊活のお守りとして</h4>
+                    <p class="text-gray-600 text-sm leading-[2.2] mb-6 font-light">妊活中で基礎体温を上げたくて使い始めました。肌触りが優しくて、チクチクしないのが嬉しい。今では寝る時も日中も手放せません。</p>
+                    <p class="text-xs text-gray-400 tracking-widest">20代 / 主婦</p>
+                </div>
+                <div class="border-t border-brand-line pt-8">
+                    <h4 class="font-normal mb-4 text-base tracking-widest">生理痛が和らいだ気がします</h4>
+                    <p class="text-gray-600 text-sm leading-[2.2] mb-6 font-light">毎月薬を飲むほどでしたが、お腹周りを常に温めておくことでかなり楽になりました。国産という安心感も購入の決め手でした。</p>
+                    <p class="text-xs text-gray-400 tracking-widest">40代 / パート</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 商品仕様表（シンプル・ミニマル） -->
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-2xl mx-auto fade-in-up">
+            <h3 class="text-xl font-normal text-center mb-12 tracking-widest">SPEC</h3>
+            <table class="w-full text-left text-sm">
+                <tbody class="divide-y divide-brand-line border-t border-b border-brand-line">
+                    <tr>
+                        <th class="w-1/3 py-6 font-normal text-gray-500 tracking-widest">商品名</th>
+                        <td class="py-6 text-gray-700 font-light">温熱調和ギア（スナップボタン式腹巻）</td>
+                    </tr>
+                    <tr>
+                        <th class="w-1/3 py-6 font-normal text-gray-500 tracking-widest">素材</th>
+                        <td class="py-6 text-gray-700 font-light">ポリエステル（COOLMAX®）45%、綿35%、ポリウレタン20%</td>
+                    </tr>
+                    <tr>
+                        <th class="w-1/3 py-6 font-normal text-gray-500 tracking-widest">サイズ</th>
+                        <td class="py-6 text-gray-700 font-light">フリーサイズ（ウエスト約60cm〜95cm対応）</td>
+                    </tr>
+                    <tr>
+                        <th class="w-1/3 py-6 font-normal text-gray-500 tracking-widest">生産国</th>
+                        <td class="py-6 text-gray-700 font-light">日本（愛知県）</td>
+                    </tr>
+                    <tr>
+                        <th class="w-1/3 py-6 font-normal text-gray-500 tracking-widest">お手入れ</th>
+                        <td class="py-6 text-gray-700 font-light leading-loose">洗濯機可（ネット使用推奨）。乾燥機のご使用はお控えください。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- よくある質問 (FAQ) -->
+    <section id="faq" class="py-24 px-6 bg-brand-bg">
+        <div class="max-w-2xl mx-auto fade-in-up">
+            <div class="text-center mb-16">
+                <p class="text-xs tracking-widest2 text-brand-accent mb-6 uppercase">FAQ</p>
+                <h2 class="text-2xl font-normal tracking-widest">よくあるご質問</h2>
+            </div>
+            
+            <div class="divide-y divide-brand-line border-t border-b border-brand-line">
+                <details class="group [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between py-6 font-normal text-gray-700 tracking-wide text-sm md:text-base">
+                        Q. 敏感肌でも使えますか？
+                        <span class="transition duration-300 group-open:-rotate-180 text-gray-400">
+                            <svg fill="none" height="20" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="pb-6 text-gray-600 leading-loose text-sm font-light">
+                        A. はい、ご使用いただけます。肌に触れる部分はチクチクしない滑らかな編み方をしており、綿混素材のため優しい肌触りです。万が一お肌に合わない場合は60日間返品保証をご利用ください。
+                    </div>
+                </details>
+                <details class="group [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between py-6 font-normal text-gray-700 tracking-wide text-sm md:text-base">
+                        Q. ボタンが外れたりしませんか？
+                        <span class="transition duration-300 group-open:-rotate-180 text-gray-400">
+                            <svg fill="none" height="20" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="pb-6 text-gray-600 leading-loose text-sm font-light">
+                        A. 日常生活（歩行やデスクワーク、軽いストレッチ等）では外れないよう、日本製の高品質なYKKスナップボタンを採用し、適切な強度で設計しております。
+                    </div>
+                </details>
+                <details class="group [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between py-6 font-normal text-gray-700 tracking-wide text-sm md:text-base">
+                        Q. 洗濯で縮みませんか？
+                        <span class="transition duration-300 group-open:-rotate-180 text-gray-400">
+                            <svg fill="none" height="20" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="pb-6 text-gray-600 leading-loose text-sm font-light">
+                        A. ネットに入れて通常の洗濯機で洗っていただければ、極端な縮みは発生しません。ただし、乾燥機のご使用は生地を傷め、縮みの原因となりますので自然乾燥をお願いいたします。
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- クロージング・購入エリア -->
+    <section id="buy" class="py-32 px-6 bg-white text-center">
+        <div class="max-w-2xl mx-auto fade-in-up">
+            <h2 class="text-2xl md:text-3xl font-normal mb-8 tracking-widest">あなたの体に、極上の調和を。</h2>
+            <p class="mb-16 text-sm md:text-base text-gray-600 leading-[2.5] font-light">
+                ご自宅でじっくりとお試しいただけるよう、<br class="hidden md:block">
+                安心の「60日間返品保証」をご用意しました。<br>
+                まずは一度、この心地よさを体感してください。
+            </p>
+            
+            <div class="border border-brand-line p-10 md:p-16 mb-12">
+                <p class="text-xs tracking-widest text-brand-accent mb-4 font-normal">整体師監修</p>
+                <h3 class="text-2xl font-normal mb-8 tracking-widest">温熱調和ギア</h3>
+                
+                <div class="flex flex-col items-center justify-center mb-10">
+                    <div class="flex items-baseline text-brand-text">
+                        <span class="text-4xl md:text-5xl font-normal tracking-widest">5,980</span>
+                        <span class="text-lg font-normal ml-2">JPY</span>
+                    </div>
+                    <span class="text-xs text-gray-400 mt-4 tracking-widest">（税込・全国送料無料）</span>
+                </div>
+
+                <a href="#" class="inline-block bg-brand-text text-white font-normal tracking-widest text-sm md:text-base py-5 px-16 hover:bg-black transition-colors duration-300 w-full md:w-auto">
+                    ご購入はこちら
+                </a>
+            </div>
+            <p class="text-xs text-gray-400 font-light leading-relaxed">
+                ※Stripeの安全な決済システムへ遷移します。<br>
+                ※Amazon Pay, Apple Pay, クレジットカード対応。
+            </p>
+        </div>
+    </section>
+
+    <!-- サイトフッター -->
+    <footer class="bg-brand-bg text-gray-500 py-20 px-6 text-xs font-light tracking-widest border-t border-brand-line">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="md:col-span-1">
+                <div class="font-normal text-brand-text text-lg mb-6">温熱調和ギア</div>
+                <p class="leading-[2.5]">
+                    〒452-0900<br>
+                    愛知県清須市〇〇町1-2-3<br>
+                    10:00 - 17:00 (土日祝休)
+                </p>
+            </div>
+            <div>
+                <h4 class="text-brand-text font-normal mb-6">GUIDE</h4>
+                <ul class="space-y-4">
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">お支払いについて</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">配送・送料について</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">返品・交換について</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">よくある質問</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-brand-text font-normal mb-6">COMPANY</h4>
+                <ul class="space-y-4">
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">運営会社</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">特定商取引法に基づく表記</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">プライバシーポリシー</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">利用規約</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-brand-text font-normal mb-6">CONTACT</h4>
+                <ul class="space-y-4">
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center pt-10 border-t border-brand-line">
+            <p>&copy; 2026 温熱調和ギア. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- アニメーション用＆スクロール追従ヘッダー用JavaScript -->
+    <script>
+        // スクロールフェードイン
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach((elem) => {
+                observer.observe(elem);
+            });
+        });
+
+        // ヘッダーのスクロール追従（透過・背景ぼかし）
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                // スクロール後はすりガラス状の背景をつけて読みやすくする
+                navbar.classList.add('bg-white/80', 'backdrop-blur-md', 'border-b', 'border-brand-line');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                // 一番上にある時は完全な透明
+                navbar.classList.remove('bg-white/80', 'backdrop-blur-md', 'border-b', 'border-brand-line');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+
+        // チェックリストのロジック
+        function updateChecklist() {
+            const checkboxes = document.querySelectorAll('.checklist-item');
+            const resultMessage = document.getElementById('checklist-result');
+            let isChecked = false;
+            checkboxes.forEach(function(checkbox) { if (checkbox.checked) isChecked = true; });
+
+            if (isChecked) {
+                resultMessage.style.opacity = '1';
+                resultMessage.style.transform = 'translateY(0)';
+            } else {
+                resultMessage.style.opacity = '0';
+                resultMessage.style.transform = 'translateY(10px)';
+            }
+        }
+    </script>
+</body>
+</html>
